@@ -2,7 +2,7 @@
 
 ## What actually worked
 
-The recovered successful combination was:
+This is the combination I got working:
 
 | Layer | Recorded version / value |
 |---|---|
@@ -27,9 +27,9 @@ The inventory independently matches that local file. **0.8.0 alone is not enough
 
 There is a kernel-side part in the EFI and a graphics package installed in the macOS volume. In this build they were validated as a combination. A copied EFI without the compatible system-side drivers can reach a fallback desktop without acceleration or fail at the display handoff.
 
-The successful history records Graphics **0.4.4**. Earlier unsuccessful tests used Graphics **0.4.1**. Do not assume a current release from the upstream project reproduces the same combination, and do not mix the separate Tahoe/NootedGreen stack into this Sequoia installation.
+My successful boot records show Graphics **0.4.4**. Earlier unsuccessful tests used Graphics **0.4.1**. Do not assume a current release from the upstream project reproduces the same combination, and do not mix the separate Tahoe/NootedGreen stack into this Sequoia installation.
 
-Our earlier [Sequoia compatibility discussion](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe/issues/33) concerned another project's Tahoe stack. That discussion did not establish a working Sequoia port of that stack. The working result documented here is WhateverXe-based.
+My earlier [Sequoia compatibility discussion](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe/issues/33) concerned another project's Tahoe stack. That discussion did not establish a working Sequoia port of that stack. The working result documented here is WhateverXe-based.
 
 ## Boot arguments preserved in the current template
 
@@ -56,11 +56,11 @@ The saved security settings are `csr-active-config` Data `03080000` and OpenCore
 
 ## Earlier failure modes and what they taught us
 
-The original Dell issue described physical GPU 46A8/80 EU and an NCP005F panel with a preferred timing near 120.035 Hz and a 335.47 MHz pixel clock. That report also recorded a 4-lane firmware-trained eDP path. These are **this unit's historical measurements**, not values to force on a different panel.
+In my original Dell issue, I documented physical GPU 46A8/80 EU and an NCP005F panel with a preferred timing near 120.035 Hz and a 335.47 MHz pixel clock. I also recorded a 4-lane firmware-trained eDP path. These are **my laptop's historical measurements**, not values to force on a different panel.
 
 The initial upstream setup reached a desktop with 7 MB and no Metal. Later local experiments reached the native display transition but sometimes produced a black panel while the kernel/network continued running. Earlier reports distinguish failures during full link training from a later Partial → Complete modeset transition returning NotReady. They do not establish that every black-screen experiment had the same cause.
 
-The [eDP discussion](https://github.com/b00t0x/WhateverXe/issues/43) records attempts based on `display13-edp-keep-080`, including local diagnostics and the difference between the branch and our local adaptations. Passing a build or CPU-only native checks was not treated as proof that physical eDP training worked.
+The [eDP discussion](https://github.com/b00t0x/WhateverXe/issues/43) records attempts based on `display13-edp-keep-080`, including local diagnostics and the difference between the branch and my local adaptations. Passing a build or CPU-only native checks was not treated as proof that physical eDP training worked.
 
 V11 eventually produced acceleration but showed high WindowServer memory use, around 2.7 GB in an observation. V12 was tested on a separate macOS test volume before migration. After V12 + Graphics 0.4.4, initial WindowServer observations were around 132–155 MB and YouTube was reported smooth. This is a substantial observed improvement, **not proof that a long-session leak or every GPU reset was eliminated**.
 
