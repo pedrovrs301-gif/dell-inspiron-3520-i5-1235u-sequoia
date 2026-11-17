@@ -1,6 +1,6 @@
 # Histórico das decisões e testes
 
-Reconstituição a partir das conversas e arquivos salvos, sem publicar logs brutos ou nomes de dispositivos/redes. As confirmações posteriores do proprietário foram incorporadas; os testes sem confirmação permanecem pendentes.
+Reconstituição a partir das conversas e arquivos salvos, sem publicar logs brutos ou nomes de dispositivos/redes. Incorporei minhas confirmações posteriores; os testes que ainda não confirmei permanecem pendentes.
 
 ## Vídeo e boot
 
@@ -37,4 +37,4 @@ Os números são Mb/s (megabits por segundo), não MB/s. Não são médias de um
 
 ## Último estado recuperado — 16/11/2026
 
-A configuração RTL88WiFi testada pelo pendrive foi copiada para a EFI do SSD com backup verificado. Entradas Kernel/Add, Kernel/Block e o patch obsoleto foram ajustados; os arquivos e variáveis do Bluetooth foram preservados. O registro termina pedindo desligar, retirar o pendrive, iniciar pelo SSD e repetir rede/BLE. Em 16/11/2026, o proprietário confirmou que o último boot pelo SSD deu certo. Essa confirmação encerra a pendência de inicialização; não substitui novas medições de rede e BLE após esse boot.
+A configuração RTL88WiFi testada pelo pendrive foi copiada para a EFI do SSD com backup verificado. Entradas Kernel/Add, Kernel/Block e o patch obsoleto foram ajustados; os arquivos e variáveis do Bluetooth foram preservados. O registro termina pedindo desligar, retirar o pendrive, iniciar pelo SSD e repetir rede/BLE. Em 16/11/2026, confirmei que o último boot pelo SSD deu certo. Essa confirmação encerra a pendência de inicialização; não substitui novas medições de rede e BLE após esse boot.
