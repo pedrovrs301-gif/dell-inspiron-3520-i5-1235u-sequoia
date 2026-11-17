@@ -2,19 +2,19 @@
 
 **Intel Core i5-1235U · Intel Iris Xe · 16 GB RAM · 500 GB SSD**
 
-An experimental, hardware-tested Hackintosh build documented to help owners of the same configuration understand what was changed, which combinations worked, and what still needs testing. Last updated **November 16, 2026**.
+I built this experimental Hackintosh and documented my hardware tests so people with the same configuration can see what I changed, which combinations worked for me, and what I still need to test. Last updated **November 16, 2026**.
 
 [Português](README.pt-BR.md)
 
 ## Current result
 
-The owner confirmed a successful SSD boot after the latest Wi-Fi migration. Earlier graphics tests recorded **Metal 2, 1536 MB reported VRAM, and the internal 1920 × 1080 display at 120 Hz**. Internal speakers were confirmed. Wi-Fi performance improved substantially, and Bluetooth LE discovery passed while 5 GHz Wi-Fi was transferring data.
+I confirmed a successful SSD boot after the latest Wi-Fi migration. In my earlier graphics tests, I recorded **Metal 2, 1536 MB reported VRAM, and the internal 1920 × 1080 display at 120 Hz**. I confirmed sound from my internal speakers. Wi-Fi performance improved substantially, and Bluetooth LE discovery passed while 5 GHz Wi-Fi was transferring data.
 
 **This is a documented experimental configuration, not a claim that every feature works.** The public `EFI/` directory is a sanitized template, not a complete boot-ready EFI. Exact provenance of the local graphics/audio builds is still being recovered. Installing only an EFI does not reproduce the graphics and speaker stack: both need components installed in macOS.
 
 ## Hardware
 
-| Item | This unit |
+| Item | My laptop |
 |---|---|
 | Laptop | Dell Inspiron 15 3520 |
 | CPU | Intel Core i5-1235U, Alder Lake-U |
@@ -36,7 +36,7 @@ Another 3520 may have a different CPU, panel, wireless card or board revision. M
 
 | Feature | Evidence | Remaining work |
 |---|---|---|
-| SSD boot | Owner confirmed the latest SSD boot on November 16 | The separately prepared anonymous template has not been boot-tested |
+| SSD boot | I confirmed the latest SSD boot on November 16 | The separately prepared anonymous template has not been boot-tested |
 | Internal graphics | Metal 2, 1536 MB, Full HD at 120 Hz recorded with the local V12-Dell combination | Long sessions, GPU resets, sleep and external displays |
 | WindowServer memory | Initial snapshots around 132–155 MB after V12, versus about 2.7 GB with V11 | This does not establish a permanent memory-leak fix |
 | Video playback | YouTube reported smooth after V12 | Codec-specific hardware decode and DRM not measured |
@@ -55,15 +55,17 @@ Speeds are **Mb/s**, not MB/s. Results from different tools and servers are sepa
 - [Audio, Bluetooth and Wi-Fi: dependencies, modifications and limits](docs/AUDIO-AND-NETWORK.md)
 - [Trackpad, keyboard, ACPI, USB, CPU and battery configuration](docs/INPUT-ACPI-AND-USB.md)
 - [Reproduction, recovery and validation](docs/REPRODUCTION.md)
-- [Component versions](manifests/kexts.json) and [anonymous local EFI file hashes](manifests/EFI-SHA256.json)
+- Component versions and anonymous local EFI file hashes are included in the [complete documented source archive](Dell-Inspiron-3520-Guia-GitHub.zip)
 - [Longer original notes in Portuguese](docs/02-COMPONENTES.md)
 
 ## What is included
 
+[Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
+
 ```text
 EFI/OC/config.example.plist       Tested settings with machine identity removed
-EFI/OC/ACPI/                      The seven enabled SSDTs saved from this unit
-EFI/OC/Kexts/UTBMap.kext/          This unit's USB map
+EFI/OC/ACPI/                      The seven enabled SSDTs saved from my laptop
+EFI/OC/Kexts/UTBMap.kext/          My laptop's USB map
 patches/                         Cumulative local Bluetooth source patch
 scripts/                         Local-only auditing and EFI reconstruction tools
 manifests/                       Versions, SHA-256 hashes and preparation checks
@@ -76,7 +78,9 @@ The template preserves the experimental security configuration, including `csr-a
 
 ## Desktop screenshot
 
-A screenshot of this actual Dell running macOS will be added later. No stock image or generated screenshot is used as proof. Before uploading a capture, remove serial numbers, private account details, network identifiers and unrelated windows.
+![My Dell Inspiron 15 3520 running macOS Sequoia](desktop-sequoia.png)
+
+This is my actual desktop screenshot. I covered only the serial-number field with a solid rectangle before sharing it. The MacBook Pro label is my emulated SMBIOS identity; the physical computer is my Dell Inspiron 15 3520.
 
 ## Community report
 
@@ -90,4 +94,4 @@ An English report is being prepared for r/hackintosh. It will describe the teste
 - [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C), [USBToolBox](https://github.com/USBToolBox/kext), [ECEnabler](https://github.com/1Revenger1/ECEnabler), [CpuTopologyRebuild](https://github.com/b00t0x/CpuTopologyRebuild), and [HoRNDIS](https://github.com/jwise/HoRNDIS).
 - The exact origin of the `local.kiro` CS8409Audio/HAL build is not yet established. [nwrafael/CS8409Audio](https://github.com/nwrafael/CS8409Audio) is a related reference, not a demonstrated byte-identical replacement.
 
-The Bluetooth patch retains the original project's GPL-2.0-or-later notice. Other components retain their own licenses. Apple driver binaries and the complete local EFI are not bundled in this public repository. Documentation was assembled with AI assistance from the owner's reports, saved configs, source changes and test results; unknowns are labeled rather than filled in.
+The Bluetooth patch retains the original project's GPL-2.0-or-later notice. Other components retain their own licenses. Apple driver binaries and the complete local EFI are not bundled in this public repository. I assembled this documentation with AI assistance from my reports, saved configs, source changes and test results. I label anything I have not confirmed instead of guessing.
