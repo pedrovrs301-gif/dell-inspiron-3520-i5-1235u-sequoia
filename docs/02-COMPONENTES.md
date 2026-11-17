@@ -17,7 +17,7 @@ O [inventário JSON](../manifests/kexts.json) registra cada entrada Kernel/Add, 
 | ECEnabler | 1.0.6 | [1Revenger1/ECEnabler](https://github.com/1Revenger1/ECEnabler) |
 | VoodooI2C | 2.9.1 | [VoodooI2C/VoodooI2C](https://github.com/VoodooI2C/VoodooI2C), com VoodooInput, GPIO, Services e HID |
 | VoodooPS2Controller | 2.3.7 | [acidanthera/VoodooPS2](https://github.com/acidanthera/VoodooPS2); teclado habilitado, mouse/trackpad PS2 desabilitados |
-| USBToolBox / UTBMap | 1.2.0 / 1.1 | [USBToolBox/kext](https://github.com/USBToolBox/kext); mapa específico desta unidade |
+| USBToolBox / UTBMap | 1.2.0 / 1.1 | [USBToolBox/kext](https://github.com/USBToolBox/kext); mapa específico do meu Dell |
 | HoRNDIS | 9.2 | [jwise/HoRNDIS](https://github.com/jwise/HoRNDIS); conexão USB Android usada como apoio nos testes |
 | RTL88WiFi | 1.0.0 | [X1REN41L/RTL88WiFi](https://github.com/X1REN41L/RTL88WiFi), pacote salvo do repositório |
 | IOSkywalkFamily | 1.0 | Dependência do pacote de Wi-Fi; identificação `com.apple.iokit.IOSkywalkFamily` |
@@ -44,7 +44,7 @@ No Sequoia, as três entradas de Wi-Fi estão limitadas a Darwin `24.0.0–24.99
 
 O [projeto RTL88WiFi](https://github.com/X1REN41L/RTL88WiFi) informa limitações de autenticação e de AWDL. A versão usada aqui é a 1.0.0 salva durante os testes; não assumir equivalência com atualizações do projeto.
 
-No Bluetooth, a versão 1.0.2 do Info.plist não identifica por si só o binário: o nosso foi modificado. Além de acrescentar o match `0bda:c829`, foram adicionados diagnóstico, recuperação do firmware persistente por comando `0xfc66` e HCI Reset. O hash final registrado é `abc5551548789f8755944881d76d11bbc0670da03cae3f6313a5dc4d625abd01`. O patch em `patches/` compara o código salvo original com o código do teste 5; não foi recompilado nesta preparação.
+No Bluetooth, a versão 1.0.2 do Info.plist não identifica por si só o binário: o meu foi modificado. Além de acrescentar o match `0bda:c829`, foram adicionados diagnóstico, recuperação do firmware persistente por comando `0xfc66` e HCI Reset. O hash final registrado é `abc5551548789f8755944881d76d11bbc0670da03cae3f6313a5dc4d625abd01`. O patch em `patches/` compara o código salvo original com o código do teste 5; não foi recompilado nesta preparação.
 
 A configuração inclui `-btlfxboardid`, `bluetoothInternalControllerInfo` com **14 bytes zero**, `bluetoothExternalDongleFailed` com 1 byte zero e `bluetoothHostControllerSwitchBehavior=always`. As mesmas chaves constam em NVRAM/Delete para substituição no boot. Não são endereços pessoais. Esses ajustes foram testados nesse conjunto; não são uma receita universal.
 
