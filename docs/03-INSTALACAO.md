@@ -1,6 +1,6 @@
 # Preparação e reprodução
 
-Este documento descreve a preparação da configuração recuperada. **Ainda não é um tutorial de instalação limpa integralmente reproduzível**: falta localizar a distribuição exata da variante V12-Dell e do build CS8409 local, registrar a BIOS e completar os testes de rede/BLE após o último boot pelo SSD. O proprietário confirmou em 16/11/2026 que esse boot deu certo.
+Este documento descreve a preparação da configuração recuperada. **Ainda não é um tutorial de instalação limpa integralmente reproduzível**: falta localizar a distribuição exata da variante V12-Dell e do build CS8409 local, registrar a BIOS e completar os testes de rede/BLE após o último boot pelo SSD. Confirmei em 16/11/2026 que esse boot deu certo.
 
 ## 1. Preparar recuperação e conferir o hardware
 
