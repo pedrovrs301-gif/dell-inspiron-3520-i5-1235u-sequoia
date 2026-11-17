@@ -80,7 +80,7 @@ The template preserves the experimental security configuration, including `csr-a
 
 ![My Dell Inspiron 15 3520 running macOS Sequoia](desktop-sequoia.png)
 
-This is my actual desktop screenshot. I covered only the serial-number field with a solid rectangle before sharing it. The MacBook Pro label is my emulated SMBIOS identity; the physical computer is my Dell Inspiron 15 3520.
+This is my original desktop screenshot, shared without visual edits. The MacBook Pro label is my emulated SMBIOS identity; the physical computer is my Dell Inspiron 15 3520.
 
 ## Credits and source status
 
