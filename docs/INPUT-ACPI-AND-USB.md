@@ -2,7 +2,7 @@
 
 ## Trackpad and keyboard
 
-The earlier Dell hardware report explicitly said the trackpad and keyboard worked. The final graphics/network changes preserved the input configuration. The precise trackpad vendor/device ID and a gesture-by-gesture test were not recovered, so no unsupported model name is assigned here.
+In my earlier Dell hardware report, I confirmed that my trackpad and keyboard worked. The final graphics/network changes preserved the input configuration. The precise trackpad vendor/device ID and a gesture-by-gesture test were not recovered, so no unsupported model name is assigned here.
 
 | Kernel/Add entry | State |
 |---|---|
@@ -54,7 +54,7 @@ USBToolBox 1.2.0 loads the provided UTBMap 1.1. Seven entries are declared:
 | SS01 | 13 | 3 |
 | SS02 | 14 | 3 |
 
-`port-count` is 14, indicating the upper port index, not 14 enabled connectors. We have not recovered a physical-port/device assignment proving which internal entry is Bluetooth and which is the other internal device. Preserve the map for this unit, but remap and test another hardware revision rather than assuming its wiring.
+`port-count` is 14, indicating the upper port index, not 14 enabled connectors. I have not yet recovered a physical-port/device assignment proving which internal entry is Bluetooth and which is the other internal device. Preserve the map for my laptop, but remap and test another hardware revision rather than assuming its wiring.
 
 ## CPU, storage and battery
 
