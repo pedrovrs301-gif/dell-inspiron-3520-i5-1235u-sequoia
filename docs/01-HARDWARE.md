@@ -2,10 +2,10 @@
 
 | Item | Configuração registrada | Origem |
 |---|---|---|
-| Notebook | Dell Inspiron 15 3520 | Modelo informado pelo proprietário como Dell 3520 |
-| CPU | Intel Core i5-1235U, Alder Lake-U | Informado pelo proprietário |
-| RAM | 16 GB | Informado pelo proprietário e histórico |
-| SSD | 500 GB | Informado pelo proprietário; fabricante/modelo não recuperados |
+| Notebook | Dell Inspiron 15 3520 | Meu notebook Dell 3520 |
+| CPU | Intel Core i5-1235U, Alder Lake-U | Minha configuração |
+| RAM | 16 GB | Minha configuração e meu histórico de testes |
+| SSD | 500 GB | Minha configuração; fabricante/modelo não recuperados |
 | iGPU | Intel Iris Xe, identificador reportado `8086:46a8` | Consulta atual ao macOS; um identificador reportado pode sofrer spoof |
 | Tela | 1920 × 1080, 120 Hz | Saída de diagnóstico registrada no histórico V12 |
 | Wi-Fi | Realtek RTL8821CE PCIe | Registros dos drivers e investigação local |
