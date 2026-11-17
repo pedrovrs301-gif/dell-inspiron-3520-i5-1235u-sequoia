@@ -2,16 +2,16 @@
 
 Intel Core i5-1235U · Intel Iris Xe · 16 GB de RAM · SSD de 500 GB
 
-Registro da configuração e dos testes realizados nesta unidade até **16/11/2026**. O objetivo é ajudar quem tem o mesmo hardware a entender os componentes usados e reproduzir os resultados com critério.
+Registrei aqui a configuração e os testes que fiz no meu Dell até **16/11/2026**. O objetivo é ajudar quem tem o mesmo hardware a entender os componentes usados e reproduzir os resultados com critério.
 
 **Estado: configuração experimental, com resultados reais e validação ainda incompleta.** O pacote público contém configuração anonimizada, ACPI, mapa USB, inventário, patch Bluetooth e documentação. A pasta `EFI` deste repositório **não é uma EFI completa para iniciar o computador**: os binários de terceiros devem ser obtidos separadamente. Há uma cópia completa para revisão local, fora deste repositório.
 
 ## O que foi confirmado
 
-| Recurso | Resultado nesta unidade | Limite da evidência |
+| Recurso | Resultado no meu Dell | Limite da evidência |
 |---|---|---|
 | macOS | Sequoia 15.8.3, build 24H241 | Outras versões não testadas aqui |
-| Boot pelo SSD | Confirmado após V12 e após a última troca do Wi-Fi | Último boot pelo SSD confirmado pelo proprietário em 16/11/2026; cópia anonimizada não testada em boot |
+| Boot pelo SSD | Confirmado após V12 e após a última troca do Wi-Fi | Confirmei o último boot pelo SSD em 16/11/2026; cópia anonimizada não testada em boot |
 | Vídeo interno | 1536 MB, Metal 2 e 1920 × 1080 a 120 Hz registrados | Depende de WhateverXe modificado + pacote Graphics no macOS |
 | Reprodução de vídeo | YouTube relatado como fluido após V12 | Estabilidade prolongada e resets de GPU ainda pendentes |
 | Memória do WindowServer | Aproximadamente 132–155 MB após V12, contra cerca de 2,7 GB antes | Amostras iniciais; não comprovam correção definitiva de vazamento |
@@ -20,7 +20,7 @@ Registro da configuração e dos testes realizados nesta unidade até **16/11/20
 | Bluetooth LE com Wi-Fi | Descoberta de anúncio BLE confirmada em repouso e durante download em 5 GHz | Não comprova pareamento, áudio de fone nem Bluetooth Classic |
 | Teclado, trackpad, bateria e USB | Kexts e mapa presentes | Não há checklist funcional completo recuperado |
 | HDMI, microfone, P2, suspensão e autonomia | Pendente | Não anunciar como funcionando |
-| AirDrop, Handoff e iServices | Não validados nesta unidade | Não prometer suporte a partir da descoberta BLE |
+| AirDrop, Handoff e iServices | Não validados no meu Dell | Não prometer suporte a partir da descoberta BLE |
 
 ## Como ler e usar
 
@@ -36,7 +36,7 @@ Registro da configuração e dos testes realizados nesta unidade até **16/11/20
 ```text
 EFI/OC/config.example.plist    Configuração sem serial, MLB, UUID ou ROM pessoais
 EFI/OC/ACPI/                   Somente as sete tabelas habilitadas nesta configuração
-EFI/OC/Kexts/UTBMap.kext/      Mapa USB desta unidade; revisar em outro equipamento
+EFI/OC/Kexts/UTBMap.kext/      Mapa USB do meu Dell; revisar em outro equipamento
 patches/                      Alterações do firmware Bluetooth sobre a base v1.0.2
 scripts/                      Auditoria da configuração e montagem a partir de arquivos locais
 manifests/                    Versões e hashes para comparação
