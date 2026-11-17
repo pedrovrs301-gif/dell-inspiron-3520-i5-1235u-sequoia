@@ -62,8 +62,6 @@ Speeds are **Mb/s**, not MB/s. Results from different tools and servers are sepa
 
 [Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
 
-[Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
-
 ```text
 EFI/OC/config.example.plist       Tested settings with machine identity removed
 EFI/OC/ACPI/                      The seven enabled SSDTs saved from my laptop
