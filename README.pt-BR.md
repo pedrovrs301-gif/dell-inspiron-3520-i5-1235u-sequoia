@@ -28,7 +28,7 @@ Registrei aqui a configuração e os testes que fiz no meu Dell até **16/11/202
 2. [Componentes, versões, origens e dependências](docs/02-COMPONENTES.md).
 3. [Preparação, instalação e recuperação](docs/03-INSTALACAO.md).
 4. [Histórico dos ajustes e diagnóstico](docs/04-HISTORICO.md).
-5. [Testes pendentes e preparação da publicação](docs/05-VALIDACAO-E-PUBLICACAO.md).
+5. [Reprodução, recuperação e validação](docs/REPRODUCTION.md).
 6. [Inventário dos kexts](manifests/kexts.json) e [SHA-256 da cópia local anonimizada](manifests/EFI-SHA256.json).
 
 ## Estrutura
