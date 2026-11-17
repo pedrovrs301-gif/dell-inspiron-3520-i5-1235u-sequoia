@@ -1,0 +1,12 @@
+.DS_Store
+._*
+__pycache__/
+*.pyc
+/EFI/OC/config.plist
+/build/
+/local/
+*.zip
+*.dmg
+*.pkg
+*.log
+/SysReport/
