@@ -13,7 +13,7 @@
 
 ## Antes de anunciar uma release completa para o mesmo modelo
 
-- [x] Confirmar boot pelo SSD depois da última troca do Wi-Fi — confirmado pelo proprietário em 16/11/2026.
+- [x] Confirmar boot pelo SSD depois da última troca do Wi-Fi — confirmei em 16/11/2026.
 - [ ] Registrar versão e opções reais da BIOS, SSD e IDs completos do Wi-Fi/áudio.
 - [ ] Identificar a revisão exata de OpenCore, além da versão do validador.
 - [ ] Localizar fonte/release/patch da variante WhateverXe V12-Dell e do CS8409Audio/HAL local.
