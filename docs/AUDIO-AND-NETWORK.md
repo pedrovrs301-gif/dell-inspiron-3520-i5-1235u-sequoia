@@ -7,11 +7,11 @@
 | CS8409Audio.kext | 1.1.0, identifier `local.kiro.CS8409Audio` | Injected by OpenCore; codec/controller side |
 | CS8409Speakers.driver | 1.1.0, identifier `local.kiro.CS8409Speakers` | `/Library/Audio/Plug-Ins/HAL/`; Core Audio device side |
 
-The owner confirmed audible internal-speaker output during the V12 migration. Merely seeing a loaded kext is weaker evidence. A fresh macOS installation needs the HAL component as well as the EFI kext.
+I confirmed audible internal-speaker output during the V12 migration. Merely seeing a loaded kext is weaker evidence. A fresh macOS installation needs the HAL component as well as the EFI kext.
 
-The exact source/release for these `local.kiro` builds has not yet been recovered. A [related CS8409 project](https://github.com/nwrafael/CS8409Audio) uses the same two-part architecture, but its current release has not been shown to be interchangeable with our local build. Do not replace the working files based only on their names. This build did not use an `alcid` value as the documented speaker solution.
+The exact source/release for these `local.kiro` builds has not yet been recovered. A [related CS8409 project](https://github.com/nwrafael/CS8409Audio) uses the same two-part architecture, but its current release has not been shown to be interchangeable with my local build. Do not replace the working files based only on their names. This build did not use an `alcid` value as the documented speaker solution.
 
-Keep a backup of the HAL before any replacement, preserve permissions required by its actual installer, and check the selected Core Audio output after restarting. We are not providing a speculative install command for an unverified package. Microphone, P2/headphone jack, codec details and behavior after sleep still need local validation.
+Keep a backup of the HAL before any replacement, preserve permissions required by its actual installer, and check the selected Core Audio output after restarting. I am not providing a speculative install command for an unverified package. Microphone, P2/headphone jack, codec details and behavior after sleep still need local validation.
 
 ## Wi-Fi: what changed
 
@@ -36,7 +36,7 @@ The old AirportRTW coexistence patch is disabled in the migrated SSD config and 
 | Separate BLE/coexistence download run | Approximately 245 Mb/s down while the target BLE advertisement was found |
 | Larger Cloudflare transfer | About 8.16 MB received in 25 seconds, timeout; about 2.61 Mb/s effective |
 
-These were USB-boot tests. The owner subsequently confirmed the migrated SSD configuration booted, but a repeated SSD speed/BLE test is not yet recorded. A larger upload also failed in one test. Different servers and tools later behaved differently; the cause was not isolated.
+These were USB-boot tests. I subsequently confirmed that my migrated SSD configuration booted, but a repeated SSD speed/BLE test is not yet recorded. A larger upload also failed in one test. Different servers and tools later behaved differently; the cause was not isolated.
 
 Turning Bluetooth off was not a consistent cure: an on/off comparison had variable results. In another earlier comparison 2.4 GHz latency was much lower than 5 GHz, but that was with an older driver. Those results do not establish a universal bad band or defective router.
 
@@ -66,7 +66,7 @@ Selecting the controller also required the BlueToolFixup board-ID path (`-btlfxb
 | `bluetoothExternalDongleFailed` | Data, 1 zero byte |
 | `bluetoothHostControllerSwitchBehavior` | String, `always` |
 
-The same keys appear in NVRAM/Delete so the saved values can be replaced at boot. One earlier configuration used **13 bytes** for internal controller info and produced an explicit service length error; the final config corrects it to 14. These zero fields are configuration values, not the owner's actual Bluetooth address.
+The same keys appear in NVRAM/Delete so the saved values can be replaced at boot. One earlier configuration used **13 bytes** for internal controller info and produced an explicit service length error; the final config corrects it to 14. These zero fields are configuration values, not my actual Bluetooth address.
 
 ### What passed
 
