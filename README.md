@@ -62,6 +62,8 @@ Speeds are **Mb/s**, not MB/s. Results from different tools and servers are sepa
 
 [Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
 
+[Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
+
 ```text
 EFI/OC/config.example.plist       Tested settings with machine identity removed
 EFI/OC/ACPI/                      The seven enabled SSDTs saved from my laptop
@@ -81,10 +83,6 @@ The template preserves the experimental security configuration, including `csr-a
 ![My Dell Inspiron 15 3520 running macOS Sequoia](desktop-sequoia.png)
 
 This is my actual desktop screenshot. I covered only the serial-number field with a solid rectangle before sharing it. The MacBook Pro label is my emulated SMBIOS identity; the physical computer is my Dell Inspiron 15 3520.
-
-## Community report
-
-An English report is being prepared for r/hackintosh. It will describe the tested result and remaining issues; this repository is the longer technical record. A screenshot and any further results can be added as the hardware is tested.
 
 ## Credits and source status
 
