@@ -2,15 +2,23 @@
 
 **Intel Core i5-1235U · Intel Iris Xe · 16 GB RAM · 500 GB SSD**
 
-I built this experimental Hackintosh and documented my hardware tests so people with the same configuration can see what I changed, which combinations worked for me, and what I still need to test. Last updated **November 16, 2026**.
+I built this experimental Hackintosh and documented my hardware tests so people with the same configuration can see what I changed, which combinations worked for me, and what I still need to test. Last updated **November 18, 2026**.
 
 [Português](README.pt-BR.md)
+
+## Complete V12 EFI download — Portuguese quick start
+
+I published my **[complete V12 EFI with my personal SMBIOS identifiers removed](https://github.com/pedrovrs301-gif/dell-inspiron-3520-i5-1235u-sequoia/releases/tag/v12-dell-sequoia-2026.11.18)**. Download `Dell-Inspiron-3520-i5-1235U-EFI-V12-Sem-SMBIOS-Pessoal.zip` under **Assets**. The old `Guia-GitHub.zip` and GitHub's automatic “Source code” ZIPs are not the complete boot package.
+
+I wrote a **[Portuguese step-by-step guide](COMECE-AQUI.pt-BR.md)** and a **[ready-to-paste ChatGPT prompt](PARA-COLAR-NO-CHATGPT.txt)** so you can give your assistant the exact hardware, versions, dependencies and test limits. Read the **[V12 package notes](LEIA-ME.pt-BR.md)** and **[component inventory](COMPONENTS.json)** too. Generate your own MacBookPro16,2 identity and test from USB first. Graphics 0.4.4 and the speaker HAL also require installation inside macOS.
+
+My reference system is Sequoia 15.8.3. I have not tested this package on macOS 26. Older documents describe the earlier template-only publication; use the new guide/release for the complete package.
 
 ## Current result
 
 I confirmed a successful SSD boot after the latest Wi-Fi migration. In my earlier graphics tests, I recorded **Metal 2, 1536 MB reported VRAM, and the internal 1920 × 1080 display at 120 Hz**. I confirmed sound from my internal speakers. Wi-Fi performance improved substantially, and Bluetooth LE discovery passed while 5 GHz Wi-Fi was transferring data.
 
-**This is a documented experimental configuration, not a claim that every feature works.** The public `EFI/` directory is a sanitized template, not a complete boot-ready EFI. Exact provenance of the local graphics/audio builds is still being recovered. Installing only an EFI does not reproduce the graphics and speaker stack: both need components installed in macOS.
+**This is a documented experimental configuration, not a claim that every feature works.** The earlier documentation ZIP contains a partial template. My new V12 release contains the complete anonymized EFI, the speaker HAL, local graphics/Bluetooth source patches and an inventory. The exact origin of the local audio build remains unresolved. Installing only an EFI does not reproduce the graphics and speaker stack: both need components installed in macOS.
 
 ## Hardware
 
@@ -55,21 +63,21 @@ Speeds are **Mb/s**, not MB/s. Results from different tools and servers are sepa
 - [Audio, Bluetooth and Wi-Fi: dependencies, modifications and limits](docs/AUDIO-AND-NETWORK.md)
 - [Trackpad, keyboard, ACPI, USB, CPU and battery configuration](docs/INPUT-ACPI-AND-USB.md)
 - [Reproduction, recovery and validation](docs/REPRODUCTION.md)
-- Component versions and anonymous local EFI file hashes are included in the [complete documented source archive](Dell-Inspiron-3520-Guia-GitHub.zip)
+- [Current V12 component inventory](COMPONENTS.json); file hashes are included in the V12 ZIP.
 - [Longer original notes in Portuguese](docs/02-COMPONENTES.md)
 
-## What is included
-
-[Download my complete documented configuration, source patch, inventories and scripts](Dell-Inspiron-3520-Guia-GitHub.zip). Extract the archive to preserve the EFI, manifests, patches and scripts folders. The English guides are also readable directly in this repository.
+## What is included in the V12 release
 
 ```text
-EFI/OC/config.example.plist       Tested settings with machine identity removed
-EFI/OC/ACPI/                      The seven enabled SSDTs saved from my laptop
-EFI/OC/Kexts/UTBMap.kext/          My laptop's USB map
-patches/                         Cumulative local Bluetooth source patch
-scripts/                         Local-only auditing and EFI reconstruction tools
-manifests/                       Versions, SHA-256 hashes and preparation checks
-docs/                            Hardware, installation and troubleshooting notes
+EFI/                            Complete OpenCore, config, ACPI, drivers and kexts
+macOS/Audio/                    CS8409Speakers HAL for installation in macOS
+COMECE-AQUI.pt-BR.md             Portuguese step-by-step guide
+PARA-COLAR-NO-CHATGPT.txt         Recipient-facing prompt for help with this package
+LEIA-ME.pt-BR.md                 Graphics, audio, network and input notes
+COMPONENTS.json                  Versions and reference hashes
+Sources/                        Local graphics and Bluetooth source patches
+CREDITS.md and LICENSES/         Attribution and license notices
+SHA256SUMS.txt                   File integrity checks
 ```
 
 Serial number and MLB are blank, UUID is zero and ROM is six zero bytes. Generate your own identity in a private copy before booting or using Apple services. Never publish a personalized config, Dell telemetry or unreviewed logs.
@@ -78,7 +86,7 @@ The template preserves the experimental security configuration, including `csr-a
 
 ## Desktop screenshot
 
-![My Dell Inspiron 15 3520 running macOS Sequoia](desktop-sequoia.png)
+![My Dell Inspiron 15 3520 running macOS Sequoia](https://raw.githubusercontent.com/pedrovrs301-gif/dell-inspiron-3520-i5-1235u-sequoia/main/desktop-sequoia.png)
 
 This is my desktop screenshot. I covered only the serial-number field before sharing it. The MacBook Pro label is my emulated SMBIOS identity; the physical computer is my Dell Inspiron 15 3520.
 
@@ -90,4 +98,4 @@ This is my desktop screenshot. I covered only the serial-number field before sha
 - [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C), [USBToolBox](https://github.com/USBToolBox/kext), [ECEnabler](https://github.com/1Revenger1/ECEnabler), [CpuTopologyRebuild](https://github.com/b00t0x/CpuTopologyRebuild), and [HoRNDIS](https://github.com/jwise/HoRNDIS).
 - The exact origin of the `local.kiro` CS8409Audio/HAL build is not yet established. [nwrafael/CS8409Audio](https://github.com/nwrafael/CS8409Audio) is a related reference, not a demonstrated byte-identical replacement.
 
-The Bluetooth patch retains the original project's GPL-2.0-or-later notice. Other components retain their own licenses. Apple driver binaries and the complete local EFI are not bundled in this public repository. I assembled this documentation with AI assistance from my reports, saved configs, source changes and test results. I label anything I have not confirmed instead of guessing.
+The Bluetooth patch retains the original project's GPL-2.0-or-later notice. Other components retain their own licenses. The complete anonymized V12 package is attached to the release; the separate Graphics installer is linked from its official upstream release. I assembled this documentation with AI assistance from my reports, saved configs, source changes and test results. I label anything I have not confirmed instead of guessing.

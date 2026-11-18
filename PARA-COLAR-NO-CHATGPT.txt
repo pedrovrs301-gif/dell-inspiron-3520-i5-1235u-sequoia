@@ -1,0 +1,32 @@
+Quero ajuda em português, uma etapa por vez, para testar a EFI V12 que Pedro compartilhou para o Dell Inspiron 15 3520 com i5-1235U, 16 GB de RAM e SSD de 500 GB.
+
+Leia primeiro os anexos COMECE-AQUI.pt-BR.md, LEIA-ME.pt-BR.md e COMPONENTS.json. Se você não conseguir ler um anexo ou acessar o link, diga qual arquivo devo colar. Não suponha que leu. O pacote foi organizado para eu conseguir fornecer à IA o contexto do hardware, das versões, das dependências e dos testes. Você não tem acesso ao meu notebook só porque anexei os arquivos.
+
+Referência do pacote:
+https://github.com/pedrovrs301-gif/dell-inspiron-3520-i5-1235u-sequoia/releases/tag/v12-dell-sequoia-2026.11.18
+
+Contexto confirmado no Dell de referência:
+- Sequoia 15.8.3, build 24H241. Este conjunto não foi validado no macOS 26.
+- Iris Xe 8086:46A8/80 EU, painel NCP005F Full HD 120 Hz, CS8409, RTL8821CE, Bluetooth USB 0bda:c829.
+- WhateverXe local V12-Dell/ABI1 (versão exibida 0.8.0), Lilu 1.7.2 e AMFIPass 1.4.1 na EFI. Não trocar pelo teste 0.8.3 ou misturar com AMFIAnchor.
+- Aceleração depende também do WhateverXe Graphics 0.4.4 instalado no macOS. O instalador oficial está separado do ZIP.
+- Áudio depende do CS8409Audio.kext na EFI e do CS8409Speakers.driver no macOS; o HAL está incluído.
+- Wi-Fi usa RTL88WiFi com IOSkywalkFamily/IO80211FamilyLegacy para Darwin 24. Não combinar com outro stack RTL.
+- Bluetooth usa firmware Realtek modificado com BlueToolFixup. Apenas descoberta BLE/coexistência em 5 GHz foi confirmada; não assumir áudio de fone/AirDrop.
+- Touchpad usa VoodooI2C/HID com -vi2c-force-polling; teclado usa VoodooPS2Keyboard.
+- A EFI foi anonimizada: serial e MLB vazios, UUID e ROM zerados. Preciso gerar minha identidade para MacBookPro16,2 preservando os tipos dos campos.
+- BIOS exata e alguns dispositivos ainda não têm identificação completa. Não invente as opções do meu firmware.
+
+Como quero ser orientado:
+1. Comece perguntando se estou no Windows ou macOS, se o Sequoia já está instalado, qual é o erro atual, e quais identificações de hardware consigo conferir. Não peça todos os logs de uma vez.
+2. Compare meu hardware com a referência antes de reutilizar tabelas ACPI/mapa USB. Explique qualquer diferença relevante.
+3. Primeiro confirme backup da EFI e uma forma de voltar pelo pendrive. Testaremos pelo USB/F12 antes de substituir a EFI interna.
+4. Explique a finalidade de cada ação, dê uma etapa curta e espere meu resultado. Diferencie instruções para Windows e para macOS.
+5. Não presuma nomes como disk0/disk3 nem invente caminhos. Antes de montar/copiar em partições, peça a listagem e confirme comigo capacidade/partições do destino. Preserve Windows/OEM. Não recomende apagar/formatar o SSD como correção automática.
+6. Preserve versões, ordem dos kexts, boot-args e ajustes do conjunto V12 enquanto buscamos reproduzir o teste. Não faça atualizações gerais, Clean Snapshot, reset de NVRAM ou mudanças de proteções como tentativa aleatória. Se uma alteração for necessária, explique o motivo e como voltar.
+7. Consulte documentação oficial para procedimentos que mudam com o tempo e distinga as instruções da versão 0.4.4 das atuais. Não trate uma versão de mesmo nome como binário idêntico ao V12 local.
+8. Não diga que a EFI sozinha instala Graphics ou HAL. Confirme os componentes dentro do macOS e o recibo correto antes de concluir sobre aceleração/áudio.
+9. Não peça senhas, chave BitLocker ou identidade pessoal completa. Se precisar do config, me ensine a compartilhar uma cópia sem SystemSerialNumber, MLB, SystemUUID e ROM e a remover identificadores de logs/capturas.
+10. Separe fatos confirmados, hipóteses e recursos ainda não testados. Se não souber uma etapa, diga e peça a informação necessária antes de sugerir comandos.
+
+Comece pela primeira pergunta para entender meu estado atual, sem mandar uma lista grande de comandos.

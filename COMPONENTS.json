@@ -1,0 +1,164 @@
+[
+  {
+    "bundle": "Lilu.kext",
+    "enabled": true,
+    "version": "1.7.2",
+    "identifier": "as.vit9696.Lilu"
+  },
+  {
+    "bundle": "VirtualSMC.kext",
+    "enabled": true,
+    "version": "1.3.8",
+    "identifier": "as.vit9696.VirtualSMC"
+  },
+  {
+    "bundle": "SMCBatteryManager.kext",
+    "enabled": true,
+    "version": "1.3.8",
+    "identifier": "ru.usrsse2.SMCBatteryManager"
+  },
+  {
+    "bundle": "AMFIPass.kext",
+    "enabled": true,
+    "version": "1.4.1",
+    "identifier": "com.dhinakg.AMFIPass"
+  },
+  {
+    "bundle": "IOSkywalkFamily.kext",
+    "enabled": true,
+    "version": "1.0",
+    "identifier": "com.apple.iokit.IOSkywalkFamily"
+  },
+  {
+    "bundle": "IO80211FamilyLegacy.kext",
+    "enabled": true,
+    "version": "1200.12.2b1",
+    "identifier": "com.apple.iokit.IO80211FamilyLegacy"
+  },
+  {
+    "bundle": "RTL88WiFi.kext",
+    "enabled": true,
+    "version": "1.0.0",
+    "identifier": "io.github.x1ren41l.RTL88WiFi"
+  },
+  {
+    "bundle": "WhateverXe.kext",
+    "enabled": true,
+    "version": "0.8.0",
+    "identifier": "org.b00t0x.WhateverXe"
+  },
+  {
+    "bundle": "CpuTopologyRebuild.kext",
+    "enabled": true,
+    "version": "2.0.2",
+    "identifier": "org.b00t0x.CpuTopologyRebuild"
+  },
+  {
+    "bundle": "NVMeFix.kext",
+    "enabled": true,
+    "version": "1.1.3",
+    "identifier": "org.acidanthera.NVMeFix"
+  },
+  {
+    "bundle": "RestrictEvents.kext",
+    "enabled": true,
+    "version": "1.1.6",
+    "identifier": "as.vit9696.RestrictEvents"
+  },
+  {
+    "bundle": "ECEnabler.kext",
+    "enabled": true,
+    "version": "1.0.6",
+    "identifier": "com.1Revenger1.ECEnabler"
+  },
+  {
+    "bundle": "VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext",
+    "enabled": true,
+    "version": "1.1.7",
+    "identifier": "me.kishorprins.VoodooInput"
+  },
+  {
+    "bundle": "VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext",
+    "enabled": true,
+    "version": "1.1",
+    "identifier": "org.coolstar.VoodooGPIO"
+  },
+  {
+    "bundle": "VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext",
+    "enabled": true,
+    "version": "1",
+    "identifier": "com.alexandred.VoodooI2CServices"
+  },
+  {
+    "bundle": "VoodooI2C.kext",
+    "enabled": true,
+    "version": "2.9.1",
+    "identifier": "com.alexandred.VoodooI2C"
+  },
+  {
+    "bundle": "VoodooI2CHID.kext",
+    "enabled": true,
+    "version": "1",
+    "identifier": "com.alexandred.VoodooI2CHID"
+  },
+  {
+    "bundle": "VoodooPS2Controller.kext",
+    "enabled": true,
+    "version": "2.3.7",
+    "identifier": "as.acidanthera.voodoo.driver.PS2Controller"
+  },
+  {
+    "bundle": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext",
+    "enabled": true,
+    "version": "2.3.7",
+    "identifier": "as.acidanthera.voodoo.driver.PS2Keyboard"
+  },
+  {
+    "bundle": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext",
+    "enabled": false,
+    "version": "2.3.7",
+    "identifier": "as.acidanthera.voodoo.driver.PS2Mouse"
+  },
+  {
+    "bundle": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext",
+    "enabled": false,
+    "version": "2.3.7",
+    "identifier": "as.acidanthera.voodoo.driver.PS2Trackpad"
+  },
+  {
+    "bundle": "USBToolBox.kext",
+    "enabled": true,
+    "version": "1.2.0",
+    "identifier": "com.dhinakg.USBToolBox.kext"
+  },
+  {
+    "bundle": "UTBMap.kext",
+    "enabled": true,
+    "version": "1.1",
+    "identifier": "com.dhinakg.USBToolBox.map"
+  },
+  {
+    "bundle": "HoRNDIS.kext",
+    "enabled": true,
+    "version": "9.2",
+    "identifier": "com.joshuawise.kexts.HoRNDIS"
+  },
+  {
+    "bundle": "CS8409Audio.kext",
+    "enabled": true,
+    "version": "1.1.0",
+    "identifier": "local.kiro.CS8409Audio"
+  },
+  {
+    "bundle": "RealtekBluetoothFirmware.kext",
+    "enabled": true,
+    "version": "1.0.2",
+    "identifier": "org.thegwchr.RealtekBluetoothFirmware"
+  },
+  {
+    "bundle": "BlueToolFixup.kext",
+    "enabled": true,
+    "version": "2.7.2",
+    "identifier": "as.acidanthera.BlueToolFixup"
+  }
+]

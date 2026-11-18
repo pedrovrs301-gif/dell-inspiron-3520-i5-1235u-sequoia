@@ -2,9 +2,17 @@
 
 Intel Core i5-1235U · Intel Iris Xe · 16 GB de RAM · SSD de 500 GB
 
-Registrei aqui a configuração e os testes que fiz no meu Dell até **16/11/2026**. O objetivo é ajudar quem tem o mesmo hardware a entender os componentes usados e reproduzir os resultados com critério.
+Registrei aqui a configuração e os testes que fiz no meu Dell até **18/11/2026**. O objetivo é ajudar quem tem o mesmo hardware a entender os componentes usados e reproduzir os resultados com critério.
 
-**Estado: configuração experimental, com resultados reais e validação ainda incompleta.** O pacote público contém configuração anonimizada, ACPI, mapa USB, inventário, patch Bluetooth e documentação. A pasta `EFI` deste repositório **não é uma EFI completa para iniciar o computador**: os binários de terceiros devem ser obtidos separadamente. Há uma cópia completa para revisão local, fora deste repositório.
+## Baixe minha EFI V12 completa
+
+Publiquei a **[EFI V12 sem meu SMBIOS pessoal nesta release](https://github.com/pedrovrs301-gif/dell-inspiron-3520-i5-1235u-sequoia/releases/tag/v12-dell-sequoia-2026.11.18)**, com OpenCore, ACPI, drivers, kexts e o complemento de áudio. Leia o **[passo a passo em português](COMECE-AQUI.pt-BR.md)** e copie o **[texto pronto para seu ChatGPT](PARA-COLAR-NO-CHATGPT.txt)**. Organizei os arquivos para você fornecer à sua IA o contexto exato do meu conjunto e seguir uma etapa por vez.
+
+No painel **Assets** da release, escolha `Dell-Inspiron-3520-i5-1235U-EFI-V12-Sem-SMBIOS-Pessoal.zip`. O ZIP antigo `Guia-GitHub.zip` contém documentação/modelo; não é a EFI completa. Os arquivos automáticos “Source code” também não são o pacote de boot.
+
+Você precisa gerar a sua identidade para `MacBookPro16,2` e testar pelo pendrive antes de alterar a EFI interna. **Copiar a EFI não instala o WhateverXe Graphics 0.4.4 nem o HAL de áudio dentro do macOS.** Expliquei esses componentes no [guia técnico do pacote](LEIA-ME.pt-BR.md).
+
+**Estado: experimental.** Meu conjunto foi usado no Sequoia 15.8.3; não testei macOS 26. A cópia anonimizada passou em validação de estrutura, mas precisa ser personalizada e testada no seu hardware.
 
 ## O que foi confirmado
 
@@ -24,24 +32,13 @@ Registrei aqui a configuração e os testes que fiz no meu Dell até **16/11/202
 
 ## Como ler e usar
 
-1. [Hardware e limites de compatibilidade](docs/01-HARDWARE.md).
-2. [Componentes, versões, origens e dependências](docs/02-COMPONENTES.md).
-3. [Preparação, instalação e recuperação](docs/03-INSTALACAO.md).
-4. [Histórico dos ajustes e diagnóstico](docs/04-HISTORICO.md).
-5. [Reprodução, recuperação e validação](docs/REPRODUCTION.md).
-6. [Inventário dos kexts](manifests/kexts.json) e [SHA-256 da cópia local anonimizada](manifests/EFI-SHA256.json).
+1. [Comece aqui: passo a passo em português](COMECE-AQUI.pt-BR.md).
+2. [Texto para colar no seu ChatGPT](PARA-COLAR-NO-CHATGPT.txt).
+3. [Guia técnico do pacote V12](LEIA-ME.pt-BR.md).
+4. [Inventário do pacote completo](COMPONENTS.json).
+5. [Hardware](docs/01-HARDWARE.md), [componentes](docs/02-COMPONENTES.md) e [histórico dos ajustes](docs/04-HISTORICO.md).
 
-## Estrutura
-
-```text
-EFI/OC/config.example.plist    Configuração sem serial, MLB, UUID ou ROM pessoais
-EFI/OC/ACPI/                   Somente as sete tabelas habilitadas nesta configuração
-EFI/OC/Kexts/UTBMap.kext/      Mapa USB do meu Dell; revisar em outro equipamento
-patches/                      Alterações do firmware Bluetooth sobre a base v1.0.2
-scripts/                      Auditoria da configuração e montagem a partir de arquivos locais
-manifests/                    Versões e hashes para comparação
-third-party/                  Aviso de licença da base do patch Bluetooth
-```
+As notas antigas registram a fase em que eu só havia publicado o modelo sem binários. Para a entrega completa de 18/11, siga os quatro primeiros links e o ZIP da release. Dentro do ZIP estão `EFI/`, `macOS/Audio/`, documentação, inventário, patches de fonte, créditos/licenças e `SHA256SUMS.txt`.
 
 A configuração conserva os ajustes de diagnóstico e segurança do conjunto testado, incluindo `csr-active-config=03080000`, `SecureBootModel=Disabled` e os boot-args gráficos. Isso faz parte da configuração experimental, e deve ser entendido antes de usá-la. Não é uma recomendação geral de desativação de proteções.
 
@@ -49,4 +46,4 @@ A configuração conserva os ajustes de diagnóstico e segurança do conjunto te
 
 A aceleração experimental usa [WhateverXe](https://github.com/b00t0x/WhateverXe) e o pacote Graphics correspondente. O Wi-Fi usa [RTL88WiFi](https://github.com/X1REN41L/RTL88WiFi). O Bluetooth parte de [RealtekBluetoothFirmware](https://github.com/thegwchr/RealtekBluetoothFirmware) com alterações locais e [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM). O boot usa [OpenCore](https://github.com/acidanthera/OpenCorePkg).
 
-As versões locais de vídeo e áudio precisam ter sua origem exata registrada antes de uma release binária pública. Os detalhes conhecidos e essas lacunas estão no inventário de componentes. Os autores dos projetos mantêm os respectivos créditos e licenças.
+Incluí os patches locais de vídeo e Bluetooth e preservei os créditos disponíveis. A origem exata do build local de áudio ainda não foi estabelecida; não trate o projeto relacionado como substituto byte a byte. As versões e lacunas estão no inventário do pacote. Os autores dos projetos mantêm os respectivos créditos e licenças.
